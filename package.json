@@ -1,0 +1,41 @@
+{
+  "name": "AlphaMeteor",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "SERVER_TEST_REPORTER=xunit XUNIT_FILE=$PWD/build/logs/unit.xml meteor test --once --driver-package meteortesting:mocha",
+    "eslint": "./node_modules/.bin/eslint . -c .eslintrc -f html -o ./build/logs/eslint-report.html"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "base64-img": "^1.0.3",
+    "bcrypt": "^1.0.3",
+    "clipboard": "^1.5.16",
+    "meteor-node-stubs": "~0.2.4",
+    "moment": "^2.17.1",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-flip-move": "^2.9.15",
+    "react-modal": "^1.6.5",
+    "react-router": "^3.0.0",
+    "shortid": "^2.2.6",
+    "simpl-schema": "0.0.3"
+  },
+  "engines": {
+    "node": "4.6.2"
+  },
+  "devDependencies": {
+    "@meteorjs/eslint-config-meteor": "^1.0.5",
+    "babel-eslint": "^8.0.3",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-meteor": "^0.4.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-meteor": "^4.1.4",
+    "eslint-plugin-react": "^7.5.1"
+  },
+  "eslintConfig": {
+    "extends": "@meteorjs/eslint-config-meteor"
+  }
+}

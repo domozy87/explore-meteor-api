@@ -1,0 +1,15 @@
+localhost ansible_connection=local
+
+[latest]
+latest ansible_ssh_host=10.10.10.37 ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[demo]
+demo   ansible_ssh_host=10.10.10.37 ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[live]
+live   ansible_ssh_host= ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[017-009:children]
+latest
+demo
+live

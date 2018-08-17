@@ -1,0 +1,6 @@
+project_id:        '017-009'
+site_name:         'driver-app'
+meteor_context:     'Production'
+public_html_path:  '/home/{{ ssh_user }}/public_html'
+admin_server:      joel2
+deploy_hash:       1486467620

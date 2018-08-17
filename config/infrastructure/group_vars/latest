@@ -1,0 +1,2 @@
+ssh_user:          '{{ stage }}-{{ project_id }}'
+phing_enable:      false

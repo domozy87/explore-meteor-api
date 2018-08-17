@@ -1,0 +1,7 @@
+<testsuite name="Mocha Tests" tests="5" failures="0" errors="0" skipped="0" timestamp="Wed, 20 Dec 2017 02:50:35 GMT" time="0.143">
+<testcase classname="links publications links.all" name="sends all links" time="0.01"/>
+<testcase classname="comment methods" name="can add a new comment" time="0.001"/>
+<testcase classname="links collection" name="insert correctly" time="0.002"/>
+<testcase classname="links methods" name="can add a new link" time="0"/>
+<testcase classname="sites collection" name="insert correctly" time="0.052"/>
+</testsuite>

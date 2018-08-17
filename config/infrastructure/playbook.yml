@@ -1,0 +1,7 @@
+---
+
+- hosts: all
+  remote_user: '{{ ssh_user }}'
+  roles:
+    - role: appdeploy
+      serial: 1

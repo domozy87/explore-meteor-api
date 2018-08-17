@@ -1,0 +1,33 @@
+---
+
+- name: Get the dev code from current GIT_COMMIT which is set by jenkins
+  git:
+    repo: 'git@git.web-essentials.asia:{{ project_id }}/AlphaMeteor.git'
+    dest: '{{ public_html_path }}'
+    accept_hostkey: yes
+    version: '{{ version }}'
+    force: yes
+
+- name: Execute phing to reset content
+  local_action: shell ssh admin-{{ project_id }}@{{admin_server}} 'cd /home/admin-{{ project_id }}/ci-phing/ && phing update-content -Dserver={{ stage }} -Dinteractive=false'
+  run_once: true
+  when: stage ==  'latest' and phing_enable
+
+- name: Install necessary Meteor packages
+  shell: meteor add accounts-password session accounts-ui email
+  args:
+    chdir: '{{ public_html_path }}'
+
+- name: Install Node modules
+  shell: meteor npm install
+  args:
+    chdir: '{{ public_html_path }}'
+
+- name: Configure Server ROOT_URL
+  shell: echo "export const ROOT_URL = '{{ stage }}.driver-web-app.wehost.asia';" > {{ public_html_path }}/imports/serverName.js
+
+- name: Write version to file
+  copy:
+    dest: '{{ public_html_path }}/version.txt'
+    content: '{{ stage }} System - Build Nr. {{ build_number }} ({{ version }}) / {{ build_timestamp }}'
+  run_once: true

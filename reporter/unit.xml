@@ -1,0 +1,9 @@
+<testsuite name="Mocha Tests" tests="4" failures="1" errors="1" skipped="0" timestamp="Wed, 13 Dec 2017 08:51:18 GMT" time="0.164">
+<testcase classname="links publications links.all" name="sends all links" time="0.023"/>
+<testcase classname="links collection" name="insert correctly" time="0.004"><failure><![CDATA[added.getCollectionName is not a function
+TypeError: added.getCollectionName is not a function
+    at Test.it (imports/api/links/links.test.js:17:36)
+    at run (packages/practicalmeteor:mocha-core/server.js:34:29)]]></failure></testcase>
+<testcase classname="links methods" name="can add a new link" time="0.001"/>
+<testcase classname="sites collection" name="insert correctly" time="0.023"/>
+</testsuite>
